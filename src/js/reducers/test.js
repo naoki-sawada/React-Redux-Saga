@@ -1,4 +1,4 @@
-import { TEST_INCREMENT, TEST_DECREMENT, TEST_CLEAR } from 'actions';
+import * as actions from 'actions';
 
 const initialState = {
   counter: 0
@@ -6,11 +6,11 @@ const initialState = {
 
 export default function test(state = initialState, action) {
   switch (action.type) {
-    case TEST_INCREMENT:
+    case actions.TEST_INCREMENT:
       return { counter: state.counter + 1 };
-    case TEST_DECREMENT:
+    case actions.TEST_DECREMENT:
       return { counter: state.counter - 1 };
-    case TEST_CLEAR:
+    case actions.TEST_CLEAR:
       return { counter: state.counter - state.counter };
     default:
       return state;
