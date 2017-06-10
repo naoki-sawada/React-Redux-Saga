@@ -1,7 +1,7 @@
 {
   "name": "React-Redux-Saga",
   "version": "0.0.1",
-  "description": "",
+  "description": "This is the example of React, Ract-Redux and Redux-Saga",
   "main": "index.js",
   "scripts": {
     "clean:www": "rm -rf www/*",
@@ -17,8 +17,8 @@
     "start": "npm run build && npm run watch"
   },
   "keywords": [],
-  "author": "",
-  "license": "",
+  "author": "Naoki Sawada",
+  "license": "MIT",
   "dependencies": {
     "react": "^15.4.2",
     "react-css-modules": "^4.1.0",
