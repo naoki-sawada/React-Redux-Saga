@@ -3,9 +3,16 @@ import CSSModules from 'react-css-modules';
 import styles from './Test.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actions from 'actions';
+import { testIncrement, testDecrement, testClear } from 'actions';
 
-class Test extends React.Component {
+@connect(state => ({
+  count: state.test.counter
+}), {
+  increment: testIncrement,
+  decrement: testDecrement,
+  clear: testClear,
+})
+export default class Test extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -23,22 +30,3 @@ class Test extends React.Component {
     );
   }
 }
-
-function mapStateToProps(state) {
-  return {
-    count: state.test.counter
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    increment: () => dispatch(actions.testIncrement()),
-    decrement: () => dispatch(actions.testDecrement()),
-    clear: () => dispatch(actions.testClear())
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Test);
