@@ -9,9 +9,10 @@
     "copy:html": "mkdir -p www/ && cp src/index.html www/",
     "copy:css": "mkdir -p www/assets/css && cp src/css/reset.min.css www/assets/css/",
     "copy:development": "npm run copy:html && npm run copy:css",
-    "build": "npm run clean && npm run copy:development && `npm bin`/webpack",
-    "watch:webpack": "`npm bin`/webpack --watch",
-    "watch:browser": "`npm bin`/browser-sync start --config bs-config.js",
+    "build:prod": "npm run clean && npm run copy:development && webpack --config webpack.config.prod.js",
+    "build": "npm run clean && npm run copy:development && webpack",
+    "watch:webpack": "webpack --watch",
+    "watch:browser": "browser-sync start --config bs-config.js",
     "watch": "npm run watch:webpack & npm run watch:browser",
     "start": "npm run build && npm run watch"
   },
