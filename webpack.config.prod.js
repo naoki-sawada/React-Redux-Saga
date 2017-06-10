@@ -1,5 +1,6 @@
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const webpack = require('webpack');
 
 module.exports = {
   entry: __dirname + '/src/js/app.js',
@@ -30,7 +31,6 @@ module.exports = {
             fallback: 'style-loader',
             use: 'css-loader?modules,localIdentName="[name]-[local]-[hash:base64:6]"'
         }),
-        // use: ['style-loader', 'css-loader?modules']
       },
       {
         test: /\.(jpg|png|gif)$/,
@@ -52,5 +52,9 @@ module.exports = {
       filename: '../assets/css/style.css',
       allChunks: true
     }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    }),
+    new webpack.optimize.UglifyJsPlugin(),
   ]
 }

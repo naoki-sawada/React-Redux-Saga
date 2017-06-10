@@ -3,6 +3,7 @@ import CSSModules from 'react-css-modules';
 import styles from './Main.css';
 import Test from './Test';
 
+@CSSModules(styles)
 export default class Main extends React.Component {
   constructor(props) {
     super(props);
@@ -10,7 +11,7 @@ export default class Main extends React.Component {
 
   render() {
     return (
-      <div className={ styles.main }>
+      <div styleName="main">
         <Test />
       </div>
     );

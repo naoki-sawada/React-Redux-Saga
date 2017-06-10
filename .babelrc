@@ -3,5 +3,5 @@
     ["es2015", {"modules": false}],
     "react"
   ],
-  "plugins": [ "transform-runtime" ]
+  "plugins": [ "transform-decorators-legacy", "transform-runtime" ]
 }
