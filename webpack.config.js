@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
@@ -30,7 +31,6 @@ module.exports = {
             fallback: 'style-loader',
             use: 'css-loader?modules,localIdentName="[name]-[local]-[hash:base64:6]"'
         }),
-        // use: ['style-loader', 'css-loader?modules']
       },
       {
         test: /\.(jpg|png|gif)$/,
@@ -50,7 +50,12 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin({
       filename: '../assets/css/style.css',
-      allChunks: true
+      allChunks: true,
+    }),
+    new webpack.ProvidePlugin({
+      React: 'react',
+      ReactDOM: 'react-dom',
+      CSSModules: 'react-css-modules',
     }),
   ]
 }

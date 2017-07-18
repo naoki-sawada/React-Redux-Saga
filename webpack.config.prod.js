@@ -1,6 +1,6 @@
+const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const webpack = require('webpack');
 
 module.exports = {
   entry: __dirname + '/src/js/app.js',
@@ -52,9 +52,19 @@ module.exports = {
       filename: '../assets/css/style.css',
       allChunks: true
     }),
+    new webpack.ProvidePlugin({
+      React: 'react',
+      ReactDOM: 'react-dom',
+      CSSModules: 'react-css-modules',
+    }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      comments: false,
+      compress: {
+        drop_console: true,
+      },
+    }),
   ]
 }
