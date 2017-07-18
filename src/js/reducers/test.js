@@ -1,7 +1,7 @@
 import * as actions from 'actions';
 
 const initialState = {
-  counter: 0
+  counter: 0,
 };
 
 export default function test(state = initialState, action) {
