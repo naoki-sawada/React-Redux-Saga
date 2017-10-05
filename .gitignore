@@ -1,7 +1,7 @@
 ### Project settings ###
 www/
 
-# Created by https://www.gitignore.io/api/macos,node
+# Created by https://www.gitignore.io/api/node,macos
 
 ### macOS ###
 *.DS_Store
@@ -87,11 +87,8 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
-# Yarn Lock file
-yarn.lock
-
 # dotenv environment variables file
 .env
 
 
-# End of https://www.gitignore.io/api/macos,node
+# End of https://www.gitignore.io/api/node,macos
