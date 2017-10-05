@@ -1,6 +1,6 @@
 {
   "name": "React-Redux-Saga",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "This is the example of React, Ract-Redux and Redux-Saga",
   "main": "index.js",
   "scripts": {
@@ -42,6 +42,6 @@
     "file-loader": "^0.11.1",
     "style-loader": "^0.18.1",
     "url-loader": "^0.5.7",
-    "webpack": "^2.6.1"
+    "webpack": "^3.6.0"
   }
 }
