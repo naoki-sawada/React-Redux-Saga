@@ -1,7 +1,15 @@
 {
   "presets": [
     ["es2015", {"modules": false}],
-    "react"
+    "react",
+    "stage-2"
   ],
-  "plugins": [ "transform-decorators-legacy", "transform-runtime" ]
+  "plugins": [
+    "transform-decorators-legacy",
+    "transform-runtime",
+    [ "babel-plugin-root-import", [{
+      "rootPathPrefix": "~",
+      "rootPathSuffix": "src/js"
+    }]]
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "React-Redux-Saga",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "This is the example of React, Ract-Redux and Redux-Saga",
   "main": "index.js",
   "scripts": {
